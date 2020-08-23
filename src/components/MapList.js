@@ -14,7 +14,8 @@ const styles ={
     container: {
         backgroundColor : '#ccc',
         borderRadius: 3,
-        width: 300
+        width: 300,
+        padding: 8
     }
 }
 
