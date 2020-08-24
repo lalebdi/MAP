@@ -9,9 +9,18 @@ class App extends Component {
   return (
     <div className="App">
       <h1> testing testing</h1>
+      <div style={styles.listsContainer}>
       {lists.map(list => (<MapList title={list.title} cards={list.cards} /> ))}
     </div>
+    </div>
   );
+  }
+}
+
+const styles ={
+  listsContainer:{
+    display: "flex",
+    flexDirection: "row"
   }
 }
 

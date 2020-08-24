@@ -13,6 +13,24 @@ const initialState =[
                 text: "this is a dummy card"
             }
         ]
+    },
+    {
+        title: "second Epi",
+        id: 0,
+        cards: [
+            {
+                id: 1,
+                text: "this is a test card"
+            },
+            {
+                id: 1,
+                text: "this is a dummy card"
+            },
+            {
+                id: 1,
+                text: "this is a blah card"
+            }
+        ]
     }
 
 ]
