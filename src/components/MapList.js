@@ -5,7 +5,7 @@ const MapList = ({ title, cards }) => {
     return (
         <div style={ styles.container }>
             <h4>{title}</h4>
-            {cards.map(card => (<MapCard text={card.text} />))}
+            {cards.map(card => (<MapCard key={card.id} text={card.text} />))}
             
         </div>
     )
