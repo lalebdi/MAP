@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import AddIcon from '@material-ui/icons/Add';
+import Card from '@material-ui/core/Card';
+import TextareaAutosize from 'react-textarea-autosize';
 
 export default class MapActionButton extends Component {
     state ={
@@ -9,6 +11,12 @@ export default class MapActionButton extends Component {
     openForm = () =>{
         this.setState({
             formOpen: true
+        })
+    }
+
+    closeForm = () => {  // this added to the onBlur so when the user clicks outsude the form closes
+        this.setState({
+            formOpen: false
         })
     }
 
@@ -36,7 +44,25 @@ export default class MapActionButton extends Component {
     }
 
     renderForm =()=>{
-        return <p>form here </p> 
+        const { list } = this.props;
+
+        const placeholder = list ? "Enter list title..." : "Enter a title for this card...";
+
+        const buttonTitle = list ? "Add List" : "Add Card";
+
+        return (
+        <div> 
+            <Card>
+                <TextareaAutosize
+                placeholder={placeholder}
+                autoFocus
+                onBlur={this.closeForm}
+                 />
+
+                
+            </Card>
+        </div>
+        )
     }
 
     render() {
