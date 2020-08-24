@@ -4,8 +4,10 @@ import Card from '@material-ui/core/Card';
 import TextareaAutosize from 'react-textarea-autosize';
 import Button from '@material-ui/core/Button';
 import CloseIcon from '@material-ui/icons/Close';
+import { connect } from 'react-redux';
+import { addList } from '../actions'
 
-export default class MapActionButton extends Component {
+class MapActionButton extends Component {
     state ={
         formOpen: false,
         text: ""
@@ -113,3 +115,5 @@ const styles ={
         alignItems: 'center'
     }
 }
+
+export default connect()(MapActionButton)

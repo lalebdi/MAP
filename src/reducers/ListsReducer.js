@@ -1,4 +1,8 @@
 //  initial state => array of lists each with an array of cards
+import { CONSTANTS } from '../actions';
+
+let listID =2 // this is temporary
+
 const initialState =[
     {
         title: "Last Epi",
@@ -39,6 +43,14 @@ const initialState =[
 
 const ListReducer = (state = initialState, action ) =>{ //take a state if there's not take the initial state
     switch (action.type) {
+        case CONSTANTS.ADD_LIST:
+            const newList ={
+                title: action.payload.title,
+                cards: [],
+                id: listID
+            }
+            listID +=1;
+            return [...state, newList]
         default:
             return state;
     }
