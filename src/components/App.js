@@ -1,5 +1,6 @@
 import React from 'react';
 import MapList from './MapList';
+import { connect } from 'react-redux';
 
 function App() {
   return (
@@ -10,4 +11,8 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = state => ({
+  lists: state.lists   // from the ListsReducer
+})
+
+export default connect(mapStateToProps) (App);
