@@ -1,11 +1,12 @@
 import React from 'react';
 import MapCard from './MapCard';
 
-const MapList = ({title}) => {
+const MapList = ({ title, cards }) => {
     return (
-        <div style={ styles.container}>
+        <div style={ styles.container }>
             <h4>{title}</h4>
-            <MapCard />
+            {cards.map(card => (<MapCard text={card.text} />))}
+            
         </div>
     )
 }
