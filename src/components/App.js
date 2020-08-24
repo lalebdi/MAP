@@ -1,6 +1,7 @@
 import React, { Component} from 'react';
 import MapList from './MapList';
 import { connect } from 'react-redux';
+import MapActionButton from './MapActionButton';
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
       <h1> testing testing</h1>
       <div style={styles.listsContainer}>
       {lists.map(list => (<MapList key={list.id} title={list.title} cards={list.cards} /> ))}
+    <MapActionButton list />
     </div>
     </div>
   );
