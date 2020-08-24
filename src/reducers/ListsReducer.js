@@ -45,7 +45,7 @@ const ListReducer = (state = initialState, action ) =>{ //take a state if there'
     switch (action.type) {
         case CONSTANTS.ADD_LIST:
             const newList ={
-                title: action.payload.title,
+                title: action.payload,
                 cards: [],
                 id: listID
             }

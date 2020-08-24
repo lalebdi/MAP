@@ -5,7 +5,7 @@ import TextareaAutosize from 'react-textarea-autosize';
 import Button from '@material-ui/core/Button';
 import CloseIcon from '@material-ui/icons/Close';
 import { connect } from 'react-redux';
-import { addList } from '../actions'
+import { addList } from '../actions/ListsActions'
 
 class MapActionButton extends Component {
     state ={
@@ -29,6 +29,16 @@ class MapActionButton extends Component {
         this.setState({
             text: e.target.value
         })
+    }
+
+    handleAddList = () =>{
+        const { dispatch } = this.props;
+        const { text } = this.state;
+
+        if(text){
+            dispatch(addList(text))
+        }
+        return;
     }
 
     // for adding another list or a card in the list:
@@ -86,7 +96,7 @@ class MapActionButton extends Component {
                 
             </Card>
             <div style={styles.formButtonGroup}>
-                <Button variant="contained" style={{ color: "white", backgroundColor:"#5aac44"}}> 
+                <Button onMouseDown={this.handleAddList} variant="contained" style={{ color: "white", backgroundColor:"#5aac44"}}> 
                 {buttonTitle}{" "}</Button>
                 <CloseIcon style={{ marginLeft: 8, cursor: "pointer" }}>Close</CloseIcon>
             </div>
@@ -117,3 +127,5 @@ const styles ={
 }
 
 export default connect()(MapActionButton)
+
+//  onMouseDown is used becuase it fires before the onBlurr does. if I used onClick no new list will be created.

@@ -1,6 +1,9 @@
-export const addList= (title) =>{
+import { CONSTANTS } from '../actions'
+
+export const addList= title =>{
     return{
-        title
+        title: CONSTANTS.ADD_LIST,
+        payload: title
     };
 };
 
