@@ -5,7 +5,8 @@ import TextareaAutosize from 'react-textarea-autosize';
 
 export default class MapActionButton extends Component {
     state ={
-        formOpen: false
+        formOpen: false,
+        text: ""
     };
 
     openForm = () =>{
@@ -17,6 +18,12 @@ export default class MapActionButton extends Component {
     closeForm = () => {  // this added to the onBlur so when the user clicks outsude the form closes
         this.setState({
             formOpen: false
+        })
+    }
+
+    handleInputChange = (e) => {
+        this.setState({
+            text: e.target.value
         })
     }
 
@@ -52,13 +59,26 @@ export default class MapActionButton extends Component {
 
         return (
         <div> 
-            <Card>
+            <Card style={{
+                overflow: "visible",
+                minHeight: 80,
+                minWidth: 272,
+                padding: "6px 8px 2px"
+            }}>
                 <TextareaAutosize
                 placeholder={placeholder}
                 autoFocus
                 onBlur={this.closeForm}
-                 />
-
+                value={this.state.text}
+                onChange={this.handleInputChange}
+                style={{
+                    resize: "none",
+                    width: "100%",
+                    outline: "none",
+                    border: "none",
+                    overflow: "hidden"
+                }}
+                />
                 
             </Card>
         </div>
