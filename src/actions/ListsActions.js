@@ -2,7 +2,7 @@ import { CONSTANTS } from '../actions'
 
 export const addList= title =>{
     return{
-        title: CONSTANTS.ADD_LIST,
+        type: CONSTANTS.ADD_LIST,   // next time the action takes a type not a title
         payload: title
     };
 };
