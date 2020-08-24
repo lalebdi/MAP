@@ -12,7 +12,12 @@ export default class MapActionButton extends Component {
         const buttonTextColor = list ? "white" : "inherit";
         const buttonTextBackground = list ? "rgba(0,0,0,0.15)" : "inherit";
         return (
-            <div style={{ opacity: buttonTextOpacity, color: buttonTextColor, backgroundColor: buttonTextBackground}}>
+            <div style={{   
+                        ...styles.openForButtonGroup,
+                        opacity: buttonTextOpacity,
+                        color: buttonTextColor, 
+                        backgroundColor: 
+                        buttonTextBackground}}>
                 <AddIcon>add</AddIcon>
                 <p>{buttonText}</p>
             </div>
@@ -21,5 +26,17 @@ export default class MapActionButton extends Component {
 
     render() {
         return this.renderAddButton();
+    }
+}
+
+const styles ={
+    openForButtonGroup: {
+        display: "flex",
+        alignItems: "center",
+        cursor: "pointer",
+        borderRadius: 3,
+        height: 36,
+        width: 272,
+        paddingLeft: 10
     }
 }
