@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import AddIcon from '@material-ui/icons/Add';
 import Card from '@material-ui/core/Card';
 import TextareaAutosize from 'react-textarea-autosize';
+import Button from '@material-ui/core/Button';
+import CloseIcon from '@material-ui/icons/Close';
 
 export default class MapActionButton extends Component {
     state ={
@@ -39,7 +41,7 @@ export default class MapActionButton extends Component {
             <div 
             onClick={this.openForm}
             style={{   
-                        ...styles.openForButtonGroup,
+                        ...styles.openFormButtonGroup,
                         opacity: buttonTextOpacity,
                         color: buttonTextColor, 
                         backgroundColor: 
@@ -81,6 +83,11 @@ export default class MapActionButton extends Component {
                 />
                 
             </Card>
+            <div style={styles.formButtonGroup}>
+                <Button variant="contained" style={{ color: "white", backgroundColor:"#5aac44"}}> 
+                {buttonTitle}{" "}</Button>
+                <CloseIcon style={{ marginLeft: 8, cursor: "pointer" }}>Close</CloseIcon>
+            </div>
         </div>
         )
     }
@@ -91,7 +98,7 @@ export default class MapActionButton extends Component {
 }
 
 const styles ={
-    openForButtonGroup: {
+    openFormButtonGroup: {
         display: "flex",
         alignItems: "center",
         cursor: "pointer",
@@ -99,5 +106,10 @@ const styles ={
         height: 36,
         width: 272,
         paddingLeft: 10
+    },
+    formButtonGroup:{
+        marginTop: 8,
+        display: "flex",
+        alignItems: 'center'
     }
 }
