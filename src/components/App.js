@@ -2,12 +2,18 @@ import React, { Component} from 'react';
 import MapList from './MapList';
 import { connect } from 'react-redux';
 import MapActionButton from './MapActionButton';
+import { DragDropContext } from 'react-beautiful-dnd';
 
 class App extends Component {
+
+  onDragEnd = () =>{
+
+  }
   render() {
 
     const { lists } = this.props;
   return (
+    <DragDropContext onDragEnd={this.onDragEnd}>
     <div className="App">
       <h1> testing testing</h1>
       <div style={styles.listsContainer}>
@@ -15,6 +21,7 @@ class App extends Component {
     <MapActionButton list />
     </div>
     </div>
+    </DragDropContext>
   );
   }
 }
