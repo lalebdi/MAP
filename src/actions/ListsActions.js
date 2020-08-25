@@ -1,4 +1,5 @@
 import { CONSTANTS } from '../actions'
+import { Draggable } from 'react-beautiful-dnd';
 
 export const addList= title =>{
     return{
@@ -6,5 +7,24 @@ export const addList= title =>{
         payload: title
     };
 };
+
+export const sort = (
+    droppableIdStart,
+    droppableIdEnd,
+    droppableIndexStart,
+    droppableIndexSEnd,
+    draggableId
+) => {
+    return {
+        type: CONSTANTS.DRAG_HAPPENED,
+        payload: { 
+            droppableIdStart,
+            droppableIdEnd,
+            droppableIndexStart,
+            droppableIndexSEnd,
+            draggableId
+        }
+    }
+}
 
 // Next, wire it up in the reducer
