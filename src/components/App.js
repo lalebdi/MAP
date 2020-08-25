@@ -4,6 +4,12 @@ import { connect } from 'react-redux';
 import MapActionButton from './MapActionButton';
 import { DragDropContext, Draggable } from 'react-beautiful-dnd';
 import { sort } from '../actions';
+import styled from 'styled-components';
+
+const ListContainer = styled.div`
+    display: flex;
+    flexDirection: row;
+`
 
 class App extends Component {
 
@@ -32,10 +38,10 @@ class App extends Component {
     <DragDropContext onDragEnd={this.onDragEnd}>
     <div className="App">
       <h1> testing testing</h1>
-      <div style={styles.listsContainer}>
+      <ListContainer>
       {lists.map(list => (<MapList listID={list.id} key={list.id} title={list.title} cards={list.cards} /> ))}
     <MapActionButton list />
-    </div>
+    </ListContainer>
     </div>
     </DragDropContext>
   );
