@@ -2,7 +2,7 @@ import React, { Component} from 'react';
 import MapList from './MapList';
 import { connect } from 'react-redux';
 import MapActionButton from './MapActionButton';
-import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
+import { DragDropContext,  Droppable } from 'react-beautiful-dnd';
 import { sort } from '../actions';
 import styled from 'styled-components';
 
@@ -43,6 +43,7 @@ class App extends Component {
         {provided => (
           <ListContainer {...provided.droppableProps} ref={provided.innerRef}>
           {lists.map((list, index) => (<MapList listID={list.id} key={list.id} title={list.title} cards={list.cards} index={index}/> ))}
+        {provided.placeholder}
         <MapActionButton list />
         </ListContainer>
         )}
@@ -53,12 +54,7 @@ class App extends Component {
   }
 }
 
-const styles ={
-  listsContainer:{
-    display: "flex",
-    flexDirection: "row"
-  }
-}
+
 
 const mapStateToProps = state => ({
   lists: state.lists   // from the ListsReducer

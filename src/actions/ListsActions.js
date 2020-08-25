@@ -1,5 +1,4 @@
 import { CONSTANTS } from '../actions'
-import { Draggable } from 'react-beautiful-dnd';
 
 export const addList= title =>{
     return{
