@@ -60,7 +60,7 @@ const ListReducer = (state = initialState, action ) =>{ //take a state if there'
             };
             cardID+=1;
 
-            console.log("action done", action)
+            // console.log("action done", action) found the bug and eliminated it
 
             const newState = state.map(list =>{
                 if(list.id === action.payload.listID) {
