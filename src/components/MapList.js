@@ -1,7 +1,7 @@
 import React from 'react';
 import MapCard from './MapCard';
 import MapActionButton from './MapActionButton';
-import { Droppable } from 'react-beautiful-dnd';
+import { Droppable, Draggable } from 'react-beautiful-dnd';
 import styled from "styled-components";
 
 const ListContainer = styled.div`
@@ -13,19 +13,25 @@ const ListContainer = styled.div`
         margin-right: 8px;
 `
 
-const MapList = ({ title, cards, listID }) => {
+const MapList = ({ title, cards, listID, index }) => {
     
     return (
-        <Droppable droppableId={String(listID)}>
+        <Draggable draggableId={String(listID)} index={index}>
+            {provided =>(
+                <ListContainer {...provided.draggableProps} ref={provided.innerRef} {...provided.dragHandleProps} >
+                <Droppable droppableId={String(listID)}>
             {(provided) => (
-            <ListContainer {...provided.droppableProps} ref={provided.innerRef} >
+            <div {...provided.droppableProps} ref={provided.innerRef}>
             <h4>{title}</h4>
             {cards.map((card, index) => (<MapCard key={card.id} index={index} text={card.text} id={card.id} />))}
             <MapActionButton listID={listID} />
             {provided.placeholder}
-        </ListContainer>
+            </div>
         )}
         </Droppable>
+        </ListContainer>
+            )}
+        </Draggable>
     )
 }
 
