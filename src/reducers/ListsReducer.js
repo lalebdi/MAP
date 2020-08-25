@@ -1,7 +1,8 @@
 //  initial state => array of lists each with an array of cards
 import { CONSTANTS } from '../actions';
 
-let listID =2 // this is temporary
+let listID = 2 // this is temporary
+let cardID = 3 // this is temporary
 
 const initialState =[
     {
@@ -50,7 +51,29 @@ const ListReducer = (state = initialState, action ) =>{ //take a state if there'
                 id: listID
             }
             listID +=1;
-            return [...state, newList]
+            return [...state, newList];
+
+        case CONSTANTS.ADD_CARD:
+            const newCard ={
+                text: action.payload.text,
+                id: cardID
+            };
+            cardID+=1;
+
+            console.log("action done", action)
+
+            const newState = state.map(list =>{
+                if(list.id === action.payload.listID) {
+                    return {
+                        ...list,
+                        cards: [...list.cards, newCard]
+                    }
+                } else {
+                    return list
+                }
+            })
+
+            return newState;
         default:
             return state;
     }

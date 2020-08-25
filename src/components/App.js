@@ -11,7 +11,7 @@ class App extends Component {
     <div className="App">
       <h1> testing testing</h1>
       <div style={styles.listsContainer}>
-      {lists.map(list => (<MapList key={list.id} title={list.title} cards={list.cards} /> ))}
+      {lists.map(list => (<MapList listID={list.id} key={list.id} title={list.title} cards={list.cards} /> ))}
     <MapActionButton list />
     </div>
     </div>

@@ -5,7 +5,7 @@ import TextareaAutosize from 'react-textarea-autosize';
 import Button from '@material-ui/core/Button';
 import CloseIcon from '@material-ui/icons/Close';
 import { connect } from 'react-redux';
-import { addList } from '../actions/ListsActions'
+import { addList, addCard } from '../actions'
 
 class MapActionButton extends Component {
     state ={
@@ -36,9 +36,24 @@ class MapActionButton extends Component {
         const { text } = this.state;
 
         if(text){
+            this.setState({
+                text: ""
+            })
             dispatch(addList(text))
         }
         return;
+    }
+
+    handleAddCard = () => {
+        const { dispatch, listID } = this.props; //listID is passed from the MapList to the here
+        const { text } = this.state;
+
+        if(text){
+            this.setState({
+                text: ""
+            })
+            dispatch(addCard(listID ,text))  // forgot to add the id
+        }
     }
 
     // for adding another list or a card in the list:
@@ -96,7 +111,8 @@ class MapActionButton extends Component {
                 
             </Card>
             <div style={styles.formButtonGroup}>
-                <Button onMouseDown={this.handleAddList} variant="contained" style={{ color: "white", backgroundColor:"#5aac44"}}> 
+                <Button onMouseDown={ list ?  this.handleAddList : this.handleAddCard} 
+                variant="contained" style={{ color: "white", backgroundColor:"#5aac44"}}> 
                 {buttonTitle}{" "}</Button>
                 <CloseIcon style={{ marginLeft: 8, cursor: "pointer" }}>Close</CloseIcon>
             </div>
