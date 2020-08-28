@@ -38,7 +38,7 @@ class App extends Component {
   return (
     <DragDropContext onDragEnd={this.onDragEnd}>
     <div className="App">
-      <h1> testing testing</h1>
+      <h1> Make Awesome Projects</h1>
       <Droppable droppableId="all-lists" direction="horizontal" type="list">
         {provided => (
           <ListContainer {...provided.droppableProps} ref={provided.innerRef}>
