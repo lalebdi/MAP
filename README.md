@@ -48,9 +48,13 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 ### Built With
 
 - React
-  -Redux
+- Redux
 - Material UI
-- <!-- GETTING STARTED -->
+- React Beautiful dnd
+- Styled Components
+- Textarea autosize
+
+<!-- GETTING STARTED -->
 
 ## Getting Started
 
