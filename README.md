@@ -33,7 +33,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-This is
+This is the second version of MAP, Make Awesome Projects.
 
 Here's why:
 
@@ -50,7 +50,8 @@ A list of commonly used resources that I find helpful are listed in the acknowle
 - React
   -Redux
 - Material UI
-- <!-- GETTING STARTED -->
+- <
+  !-- GETTING STARTED -->
 
 ## Getting Started
 
