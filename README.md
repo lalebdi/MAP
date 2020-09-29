@@ -48,8 +48,12 @@ This is the second version of MAP, Make Awesome Projects.
 - React
 - Redux
 - Material UI
-- <
-  !-- GETTING STARTED -->
+- react-beautiful-dnd
+- styled-components
+- react-textarea-autosize
+
+
+  <!-- GETTING STARTED -->
 
 ## Getting Started
 
