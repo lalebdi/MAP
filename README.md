@@ -35,7 +35,7 @@
 
 This is the second version of MAP, Make Awesome Projects.
 
-Here's why:
+
 
 - Your time should be focused on creating something amazing. A project that solves a problem and helps others.
 - Features lists and cards that you can drag and drop.
