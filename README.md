@@ -46,7 +46,7 @@ Here's why:
 ### Built With
 
 - React
-  -Redux
+- Redux
 - Material UI
 - <
   !-- GETTING STARTED -->
