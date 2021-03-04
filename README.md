@@ -94,7 +94,7 @@ npm install
 
 ## Usage
 
-This app will be deployed soon.
+This app has been deployed.
 
 Please refer to the [Documentation](https://example.com)_
 
