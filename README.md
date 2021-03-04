@@ -96,7 +96,7 @@ npm install
 
 This app has been deployed.
 
-Please refer to the [Documentation](https://example.com)_
+Please refer to the [live Site](https://example.com)_
 
 
 
