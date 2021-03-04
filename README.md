@@ -96,7 +96,7 @@ npm install
 
 This app has been deployed.
 
-Please refer to the [live Site](https://example.com)_
+Please refer to the [live Site](https://keen-khorana-d28887.netlify.app)_
 
 
 
