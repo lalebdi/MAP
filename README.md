@@ -80,7 +80,7 @@ npm install npm@latest -g
 1. Clone the repo
 
 ```sh
-git clone https://github.com/lalebdi/MAP
+git clone https://github.com/lalebdi/MAP.git
 ```
 
 2. Install NPM packages
